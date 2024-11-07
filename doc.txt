@@ -1,0 +1,81 @@
+Projet création site
+
+Structure du projet :
+
+	dossierProjet
+		→css
+			style.css
+		→img
+			....
+		→son
+			...
+		cinema.html
+		index.html
+		info.html
+		lieu.html
+
+Structure d'une page :
+	<body>
+		<header>
+			'code html de la barre de navigation'
+		</header>
+		<main>
+			'corp de la page'
+		</main>
+		<footer>
+			'affichage des sources des articles et images'
+		</footer>
+	</body>
+
+	- Ne pas utiliser la balise <H1> celci est déjà utilisé dans le header
+	- Pour respecter la charte graphique du projet :
+		<article>
+			<h2>.....</h2>
+			<img src="" alt="" /> (si besoin d'une image)
+			
+			Pour faire une liste
+			<ul>
+				<li>
+			</ul>
+
+			Pour faire une liste ordonée
+			<ol>
+				<li>
+			</ol>
+
+			Un texte
+			<p> 
+		</article>
+
+
+
+
+Ajout d'une page au projet /
+	Pour ajouter une page au projet, il faut y ajouter un nouveau fichier .html (en respectant la structure du projet et la structure de la page). Copier le header :
+		
+		<header>
+        	<div>
+            	<img src="/img/blason.png" alt="armoiries de la ville">
+            	<h1>Ville de Bordeaux</h1>
+        	</div>
+        	<br>
+        	<div class="devise">
+            	<span>Lilia sola regunt lunam unda castra leonem</span>
+            	<span>Les lys règnent seuls sur la lune, les ondes, la forteresse et le lion</span>
+        	</div>
+       		<nav>
+            	<ul>
+                	<li><a href="index.html">Welcome</a></li>
+                	<li><a href="lieu.html">Lieux remarquables</a></li>
+                	<li class="actif"><a href="cinema.html">Cinémas</a></li>
+                	<li><a href="info.html">Infos pratiques</a></li>
+                	<li><a href="concert.html">Concerts</a></li>
+            	</ul>
+        	</nav>
+    	</header>
+
+    Ajouter un <li> dans chaque page existante avec le lien vers la nouvelle page et son tire.
+    Dans la nouvelle page ajouter la class 'class="actif"', pour pourvoir metre en évidance la page active. Dans l'example ci-dessus c'est la page cinéma qui mis en évidance
+
+
+
