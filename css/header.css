@@ -1,0 +1,129 @@
+header{
+    margin: 0;
+    padding: 0;
+}
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: O;
+    height: 80px;
+    background: #ddd1bc;
+}
+
+header nav img{
+    margin-left: 10px;
+    transform: translateY(30px);
+    height: 40px;
+}
+
+
+
+header nav ul{
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 100%;
+}
+
+header nav ul li{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+
+}
+
+header nav ul li a{
+    font-weight: bold;
+    color: gray;
+}
+
+header nav ul li a:hover{
+    transform: translateY(-5px);
+}
+
+.image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden; /* Masque les parties qui dépassent */
+}
+
+.image-container img {
+    /* width: 100%; */
+   transform: translateY(-280px);
+}
+
+
+.search-box {
+    position: relative;
+    width: 150px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px 8px 8px 30px; /* Espace pour l'icône */
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: none;
+}
+
+.search-box::before {
+    content: "🔍"; /* Icône de loupe en Unicode */
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 16px;
+}
+
+.actif  a{
+    text-decoration: underline;
+    color: black;
+}
+
+.titre{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 80%;
+    transform: translateY(-100px);
+    border-top: 2px solid rgb(251, 249, 249);
+    border-bottom: 2px solid rgb(251, 249, 249);
+    background-color: rgba(63, 58, 58, 0.354);
+}
+
+.titre h1{
+    height: 40px;
+    color: rgb(254, 254, 254);
+    margin: auto;
+    text-align: center;
+    font-weight: normal;
+}
+
+.titre::before{
+    position: relative;
+    content: '';
+    left: -15px;
+    top: 4px;
+    height: 30px;
+    width: 30px;
+    transform: rotate(45deg);
+    border-right: solid 2px white;
+    border-top: solid 2px white;
+}
+
+.titre::after{
+    position: relative;
+    content: '';
+    right: -15px;
+    top: 4px;
+    height: 30px;
+    width: 30px;
+    transform: rotate(225deg);
+    border-right: solid 2px white;
+    border-top: solid 2px white;
+}
