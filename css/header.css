@@ -1,129 +1,119 @@
 header{
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box;
 }
 
 header nav{
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: O;
-    height: 80px;
-    background: #ddd1bc;
-}
-
-header nav img{
-    margin-left: 10px;
-    transform: translateY(30px);
-    height: 40px;
-}
-
-
-
-header nav ul{
-    margin-top: auto;
-    margin-bottom: auto;
+    background: rgb(193,186, 171);
     display: flex;
     justify-content: space-between;
-    list-style-type: none;
-    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 10%;
 }
 
-header nav ul li{
+header nav .logo{
     display: flex;
-    padding: 15px;
-    align-items: center;
-
 }
 
-header nav ul li a{
-    font-weight: bold;
-    color: gray;
+header nav .logo img{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 85%;
 }
 
-header nav ul li a:hover{
-    transform: translateY(-5px);
+header nav .nav-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
 }
 
-.image-container {
-    width: 100%;
-    height: 200px;
-    overflow: hidden; /* Masque les parties qui dépassent */
+header nav .nav-list .nav-item{
+    cursor: pointer;
+    height: 100%;
+    padding: 0 20px;
+    transition: .3s;
 }
 
-.image-container img {
-    /* width: 100%; */
-   transform: translateY(-280px);
+header nav .nav-list .nav-item:hover{
+    background: rgb(219, 209, 190);
 }
 
-
-.search-box {
-    position: relative;
-    width: 150px;
-}
-
-.search-box input {
-    width: 100%;
-    padding: 8px 8px 8px 30px; /* Espace pour l'icône */
-    box-sizing: border-box;
-    border-radius: 20px;
-    border: none;
-}
-
-.search-box::before {
-    content: "🔍"; /* Icône de loupe en Unicode */
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #999;
+header nav .nav-list .nav-item .nav-link{
     font-size: 16px;
+    font-weight: 400;
 }
 
-.actif  a{
-    text-decoration: underline;
-    color: black;
+@media (max-width: 870px){
+    header nav{
+        padding: 0 5%;
+    }
+
+    hader .nav-list .nav-item{
+        padding: 0 10px;
+    }
 }
 
-.titre{
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    width: 80%;
-    transform: translateY(-100px);
-    border-top: 2px solid rgb(251, 249, 249);
-    border-bottom: 2px solid rgb(251, 249, 249);
-    background-color: rgba(63, 58, 58, 0.354);
+@media (max-width: 775px){
+    header nav .nav-list{
+        display: grid;
+        position: absolute;
+        background:  rgb(193,186, 171);
+        width: 100%;
+        left: 0;
+        top: 70px;
+        z-index: -1;
+        transform: translateY(-150%);
+        transition: 0.3s;
+    }
+
+    header nav .nav-list .nav-item{
+        padding-left: 35px;
+    }
+
+    header nav .menu-toggle{
+        display: grid !important;
+    }
 }
 
-.titre h1{
-    height: 40px;
-    color: rgb(254, 254, 254);
-    margin: auto;
-    text-align: center;
-    font-weight: normal;
+header  #btnNavBar {
+    display: none;
 }
 
-.titre::before{
-    position: relative;
-    content: '';
-    left: -15px;
-    top: 4px;
-    height: 30px;
-    width: 30px;
+header nav .menu-toggle{
+    display: none;
+    height: min-content;
+    margin: 18px -10px 0 0;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+header nav .menu-toggle .bar{
+    width: 40px;
+    height: 5px;
+    background:rgb(110, 101, 83);
+    margin-bottom: 10px;
+    transition: .7s;
+}
+
+header #btnNavBar:checked ~ nav .nav-list{
+    transform: translateY(0);
+    z-index: 55;
+}
+
+header #btnNavBar:checked ~nav .menu-toggle{
+    margin-top: 35px;
+}
+
+header #btnNavBar:checked ~nav .menu-toggle .bar:nth-child(1){
+    position: absolute;
     transform: rotate(45deg);
-    border-right: solid 2px white;
-    border-top: solid 2px white;
 }
 
-.titre::after{
-    position: relative;
-    content: '';
-    right: -15px;
-    top: 4px;
-    height: 30px;
-    width: 30px;
-    transform: rotate(225deg);
-    border-right: solid 2px white;
-    border-top: solid 2px white;
+header #btnNavBar:checked ~nav .menu-toggle .bar:nth-child(2){
+    display: none;
+}
+
+header #btnNavBar:checked ~nav .menu-toggle .bar:nth-child(3){
+    transform: rotate(-45deg);
 }

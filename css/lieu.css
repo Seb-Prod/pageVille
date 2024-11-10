@@ -1,6 +1,6 @@
 /* Décalage du main vers le haut */
 #lieu {
-  margin-top: -50px;
+  /* margin-top: -50px; */
   font-size: 14px;
 }
 
@@ -191,7 +191,13 @@ input[type=checkbox]+label.btn {
 }
 
 
+@media only screen and (max-width: 1000px) {
 
+  /* Carte article */
+  #lieu .content article {
+    width: calc(33% - 15px);
+  }
+}
 
 
 @media only screen and (max-width: 800px) {
