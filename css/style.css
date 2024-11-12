@@ -18,135 +18,527 @@ body {
     background-color: rgb(219, 209, 190)
 }
 
-/* Header */
+/* --------------------- */
+/* Header                */
+/* --------------------- */
 
-
-
-
-
-/* header div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-} */
-
-/* header .devise {
-    flex-direction: column;
-} */
-
-/* header .devise span {
-    color: orange;
-} */
-
-/* header div img {
-    width: 50px;
-    margin: 5px;
-} */
-
-/* header div h1 {
-    color: rgb(217, 217, 217);
-    font-size: 65px;
-    margin: 0;
-    text-shadow: black 2px 2px;
-    -webkit-text-stroke: 2px black;
-    text-align: center;
-} */
-
-/* header span {
-    font-size: 16px;
-    color: white;
-} */
-
-/* header nav {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-} */
-
-/* header nav ul {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    text-align: center;
-    background: orange;
-} */
-/* 
-
-header nav ul li {
-    display: flex;
-    margin-right: 15px;
-    background-color: rgba(255, 255, 255, 0.699);
-    border: solid 1px white;
-    padding: 5px;
-    border-radius: 5px;
-    width: 80px;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* header nav ul li a {
-    font-size: 12px;
+header{
+   
+    box-sizing: border-box;
     
-    text-decoration: none;
-    color: black;
+}
+header .navigation{
+    position: fixed;
     width: 100%;
-} */
+    z-index: 99;
+    
+}
 
-/* header nav ul .actif {
-    background-color: orange
-} */
+header nav{
+    background: rgb(193,186, 171);
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 10%;
+    
+}
 
-/* header nav ul li:hover {
-    background-color: rgba(255, 255, 255);
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    transform: translateY(-5px);
-} */
+header nav .logo{
+    display: flex;
+}
 
-/* header nav ul .actif:hover {
-    background-color: orange;
-    transform: translateY(0);
-} */
+header nav .logo img{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 85%;
+}
 
-/* Main */
-/* main article {
-    margin: 5px;
-    margin-top: 20px;
-    border-radius: 5px;
-    border: 1px white solid;
-    background-color: #ffffffa1;
-    padding: 5px;
-} */
+header nav .nav-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
 
-/* main article h2 {
-    color: #555b6e;
-} */
+header nav .nav-list .nav-item{
+    cursor: pointer;
+    height: 100%;
+    width: max-content;
+    padding: 0 10px;
+    transition: .3s;
+}
 
-/* main article h3 {
-    color: #555b6e;
-} */
+header nav .nav-list .nav-item:not(:last-child):hover{
+    background: rgb(219, 209, 190);
+}
 
-/* main article img {
-    margin: 10px;
+header nav .nav-list .nav-item .nav-link{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+header nav .nav-list .nav-item .search-box input{
     border-radius: 10px;
-    height: 280px;
-} */
+    padding: 5px;
+    height: 25px;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+}
 
-/* main article ul {
-    margin-top: 15px;
-} */
+header nav .nav-list .nav-item .search-box::before{
+    content: '🔍';
+    transform: translateX(155px);
+    position: absolute;
+    width: 10px;
+    height: 10px;
+}
 
-/* main article ul li::before {
-    content: '⦿';
-    padding-right: 8px;
-    color: green;
-} */
+header .titre{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    font-size: 40px;
+    color: white;
+}
 
-/* main article ul li {
+
+@media (max-width: 1000px){
+    header nav{
+        padding: 0 8%;
+    }
+
+    header .nav-list .nav-item{
+        padding: 0 8px;
+    }
+}
+
+@media (max-width: 960px){
+    header nav{
+        padding: 0 6%;
+    }
+
+    header .nav-list .nav-item{
+        padding: 0 6px;
+    }
+}
+
+@media (max-width: 910px){
+    header nav{
+        padding: 0 4%;
+    }
+
+    header .nav-list .nav-item{
+        padding: 0 4px;
+    }
+}
+
+@media (max-width: 870px){
+    header nav{
+        padding: 0 2%;
+    }
+
+    header .nav-list .nav-item{
+        padding: 0 2px;
+    }
+
+    header .titre{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 840px){
+    header .titre{
+        font-size: 20px;
+    }
+
+    header nav{
+        padding: 0 5%;
+    }
+
+    header .nav-list .nav-item{
+        padding: 0 2px;
+    }
+
+    header nav .divTitre{
+        display: grid !important;
+     }
+
+
+    header nav .nav-list{
+        display: grid;
+        position: absolute;
+        background:  rgb(193,186, 171);
+        width: 100%;
+        left: 0;
+        top: 70px;
+        z-index: -1;
+        transform: translateY(-150%);
+        transition: 0.3s;
+    }
+
+    header nav .nav-list .nav-item{
+        padding-left: 35px;
+    }
+
+    header nav .menu-toggle{
+        display: grid !important;
+    }
+
+    
+}
+
+header  #btnNavBar {
+    display: none;
+}
+
+header nav .menu-toggle{
+    display: none;
+    height: min-content;
+    margin: 18px -10px 0 0;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+header nav .menu-toggle .bar{
+    width: 40px;
+    height: 5px;
+    background:rgb(110, 101, 83);
+    margin-bottom: 10px;
+    transition: .7s;
+}
+
+header #btnNavBar:checked ~ nav .nav-list{
+    transform: translateY(0);
+    z-index: 55;
+}
+
+header #btnNavBar:checked ~nav .menu-toggle{
+    margin-top: 35px;
+}
+
+header #btnNavBar:checked ~nav .menu-toggle .bar:nth-child(1){
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+header #btnNavBar:checked ~nav .menu-toggle .bar:nth-child(2){
+    display: none;
+}
+
+header #btnNavBar:checked ~nav .menu-toggle .bar:nth-child(3){
+    transform: rotate(-45deg);
+}
+
+header nav .nav-list .actif{
+    color:  rgb(193,186, 171);
+}
+
+header nav .nav-list .actif a{
+    background:rgb(110, 101, 83);
+    color:  rgb(193,186, 171);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+header nav .divTitre{
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+header nav .divTitre h6{
+    margin: 0;
+    line-height: 70px;
+    font-size: 30px;
+    color: rgb(110, 101, 83);
+}
+
+header .image-container{
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+}
+
+header .image-container img{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ------------------ */
+/* Main page lieux    */
+/* ------------------ */
+
+/* Décalage du main vers le haut */
+#lieu {
+    /* margin-top: -50px; */
+    font-size: 14px;
+  }
+  
+  /* Les généralités */
+  #lieu .generalite {
+    margin: 15px;
+    padding: 2px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.865);
+    box-shadow: 5px 5px 10px black;
+  }
+  
+  /* Container des articles */
+  #lieu .content {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  /* Carte article */
+  #lieu .content article {
+    display: flex;
+  
+    border-radius: 15px 15px;
+    background-color: rgba(255, 255, 255, 0.865);
+    background-color: rgb(233, 227, 216);
+    box-shadow: 5px 5px 10px black;
+    min-height: 250px;
+    margin: auto;
+    margin-bottom: 15px;
+    width: calc(25% - 15px);
+  }
+  
+  /* Titre article (image, titre et bouton) */
+  #lieu .content article .titreArticle {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+  
+    /* background-color: red; */
+  }
+  
+  /* Image de l'article */
+  #lieu .content article .titreArticle img {
+    max-width: 90%;
+    max-height: 140px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 10px black;
+  }
+  
+  /* Titre de l'article */
+  #lieu .content article .titreArticle h2 {
+    text-align: center;
+    font-size: 1em;
+    height: 50px;
+    /* color: red; */
+  }
+  
+  
+  /* ------------------------------------------------------------------- */
+  /* Bouton pour afficher le popup */
+  #lieu .content article .titreArticle .button {
+    text-align: center;
+    font-size: 1em;
+    padding: 2px;
+    bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    color: gray;
+    border: 1px solid black;
+    border-radius: 10px;
     text-decoration: none;
-} */
-
+    cursor: pointer;
+    box-shadow: 2px 4px 12px black;
+    transition: all 0.3s ease-out;
+  }
+  
+  /* Au survol du bouton qui affiche le popup */
+  #lieu .content article .titreArticle .button:hover {
+    box-shadow: none;
+  }
+  
+  /* ------------------------------------------------------------------- */
+  
+  
+  /* ------------------------------------------------------------------- */
+  #lieu input[type=checkbox] {
+    display: none;
+  }
+  
+  input[type=checkbox]+label.btn {
+    text-align: center;
+    font-size: 12px;
+    padding: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    width: 80%;
+    color: gray;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 2px 4px 12px black;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    visibility: hidden;
+    position: absolute;
+  }
+  
+  
+  
+  /* ------------------------------------------------------------------- */
+  
+  
+  /* Conteneur du popup */
+  #lieu .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  /* Affiche le popup quand il a le target */
+  #lieu .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* Conteneur du popup */
+  #lieu .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    max-height: 200px;
+    box-shadow: 0px 0px 35px white;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all .5s ease-in-out;
+  }
+  
+  /* Conteneur de l'article dans le popup */
+  #lieu .content article .texte {
+    max-height: 190px;
+    overflow: hidden;
+    overflow: scroll;
+  }
+  
+  #lieu .texte img {
+    max-width: 35%;
+    max-height: 30%;
+    margin-right: 5px;
+    float: left;
+  }
+  
+  
+  /* Style d'un paragraphe du popup */
+  #lieu .content article .texte p {
+    margin: 5px;
+    text-align: justify;
+    margin-bottom: 5px;
+  }
+  
+  /* Bouton close du popup */
+  #lieu .popup .close {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Bouton close du popup quand on le survol */
+  #lieu .popup .close:hover {
+    font-size: 40px;
+  }
+  
+  
+  @media only screen and (max-width: 1000px) {
+  
+    /* Carte article */
+    #lieu .content article {
+      width: calc(33% - 15px);
+    }
+  }
+  
+  
+  @media only screen and (max-width: 800px) {
+  
+    /* Carte article */
+    #lieu .content article {
+      width: calc(50% - 15px);
+    }
+  }
+  
+  /* Pour Petit écran */
+  @media only screen and (max-width: 600px) {
+  
+    /* Masque le bouton qui affiche le popup */
+    #lieu .button {
+      position: absolute;
+      left: -500px;
+      visibility: hidden;
+    }
+  
+    /* Masque le bouton close du popup */
+    #lieu .popup .close {
+      visibility: hidden;
+    }
+  
+    input[type=checkbox]+label.btn {
+      visibility: visible;
+      position: relative;
+    }
+  
+  
+    /* Carte article */
+    #lieu .content article {
+      width: calc(100% - 10px);
+    }
+  
+    /* Action click bouton */
+    #lieu .buttonMobil:checked~.overlay {
+      visibility: visible;
+      opacity: 1;
+      position: relative;
+      background: none;
+    }
+  
+    /* Conteneur du popup */
+    #lieu .popup {
+      margin: 5px;
+      width: fit-content;
+      max-height: max-content;
+    }
+  
+    /* Conteneur de l'article dans le popup */
+    #lieu .content article .texte {
+      max-height: fit-content;
+    }
+  
+    /* Chagement du texte du bouton */
+    #lieu .buttonMobil:checked~.btn::before{
+      content: "Masquer l'article";
+      font-size: 12px;
+    }
+  
+    #lieu .buttonMobil:checked~.btn{
+      font-size: 0;
+    }
+  }
 
 
